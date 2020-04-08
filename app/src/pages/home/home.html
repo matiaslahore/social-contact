@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Social Contact
+    </ion-title>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="row col col-xs-12 col-sm-12">
+    <div class="col col-xs-12 col-sm-12">
+      <button style="height: 60px" ion-button full icon-left (click)="showProfile('friends')" color="primary">
+        <ion-icon name="people"></ion-icon>
+        Perfil Amigos
+      </button>
+    </div>
+    <div class="col col-xs-12 col-sm-12">
+      <button style="height: 60px" ion-button full icon-left (click)="showProfile('job')" color="primary">
+        <ion-icon name="people"></ion-icon>
+        Perfil Trabajo
+      </button>
+    </div>
+  </div>
+
+
+</ion-content>

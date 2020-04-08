@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Social Contact
+    </ion-title>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <button ion-button full icon-left (click)="scanCode()" color="primary"><ion-icon name="qr-scanner"></ion-icon>Volver a escanear</button>
+
+  <ion-card *ngIf="scannedCode">
+    <ion-card-content>
+      Nuevo Contacto: {{ scannedCode }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

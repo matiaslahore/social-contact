@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            QR Code App
+        </ion-title>
+        <button ion-button icon-only menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+    <form [formGroup]="myForm" (ngSubmit)="saveData()">
+        <ion-list>
+            <ion-item>
+                <ion-icon name="person" item-start></ion-icon>
+                <ion-label stacked>Nombre:</ion-label>
+                <ion-input formControlName="name" type="text" value="{{name}}"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="person" item-start></ion-icon>
+                <ion-label stacked>Apellido:</ion-label>
+                <ion-input formControlName="lastName" type="text" value="{{lastname}}"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="call" item-start></ion-icon>
+                <ion-label stacked>Numero de telefono:</ion-label>
+                <ion-input formControlName="number" type="number" value="{{telephone}}"></ion-input>
+            </ion-item>
+        </ion-list>
+        <div padding>
+            <button ion-button block type="submit" [disabled]="!myForm.valid">Guardar</button>
+        </div>
+    </form>
+
+</ion-content>
+

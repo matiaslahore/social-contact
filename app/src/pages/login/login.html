@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Social Contact
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <form (ngSubmit)="saveEmail()">
+    <ion-item>
+      <ion-label>Ingrese su Email</ion-label>
+      <span></span>
+      <ion-textarea [(ngModel)]="login.email" name="email" ></ion-textarea>
+    </ion-item>
+    <button style="margin-bottom: 3em; margin-top: 2em;" ion-button (click)="openPage()" [disabled]="!isEmailValid()" type="submit" block>Log in</button>
+  </form>
+
+    <ion-title style="margin-bottom: 1em;">
+      Test Emails
+    </ion-title>
+    <ion-list>
+      <button style="margin-bottom: 1em;" ion-item *ngFor="let e of emailsTest" (click)="useThisEmail(e)">
+        {{ e.email }}
+      </button>
+    </ion-list>
+
+</ion-content>
+

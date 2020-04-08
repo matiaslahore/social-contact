@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Contactos de Trabajo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <button ion-button full icon-left (click)="scanCode()" color="primary"><ion-icon name="qr-scanner"></ion-icon>Escanear Codigo</button>
+  <button ion-button full icon-left (click)="showCode()" color="secondary"><ion-icon ></ion-icon>Mostrar mi Codigo</button>
+  <ion-list>
+    <button ion-item *ngFor="let item of items">
+      <ion-icon name="contact" item-start></ion-icon>
+      {{item.nombre + ' ' + item.apellido}}
+      <div class="item-note" item-end>
+        {{item.telefono}}
+      </div>
+    </button>
+  </ion-list>
+</ion-content>
+
